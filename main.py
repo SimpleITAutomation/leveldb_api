@@ -9,7 +9,8 @@ DATA_DIR = os.getenv('LOCAL_DATA_DIR', '/tmp/db')
 app = FastAPI(
     title='LevelDB Single Server API',
     description='Simple HTTP Layer for LevelDB',
-    version='0.1'
+    version='0.1',
+    debug=True
 )
 
 level_db_client = plyvel.DB(DATA_DIR, create_if_missing=True)
